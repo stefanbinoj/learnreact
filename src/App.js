@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar title="Stefan" />
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />
@@ -17,4 +17,3 @@ function App() {
 }
 
 export default App;
-  
