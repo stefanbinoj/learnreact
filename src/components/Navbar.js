@@ -17,6 +17,7 @@ function Navbar(props) {
                 color: 'black',
                 text:"white"
             });
+            document.body.style.backgroundColor='black'
             setBtnText("Enable Light Mode");
         } else {
             setColor({
@@ -24,7 +25,10 @@ function Navbar(props) {
                 color: 'white',
                 text:"black"
             });
-            setBtnText("Enable Dark Mode");
+            setBtnText("Enable Dark Mode");            
+            document.body.style.backgroundColor='white'
+
+
         }
     };
 
