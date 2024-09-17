@@ -1,9 +1,10 @@
 import React from 'react'
 
-function About() {
+const About=()=> {
+
   return (
-    <div>
-      THis is about me 
+    <div className=''>
+      THis is about a
     </div>
   )
 }

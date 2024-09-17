@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 function Navbar(props) {
     const [color, setColor] = useState({
@@ -15,7 +16,7 @@ function Navbar(props) {
             setColor({
                 nav: 'dark',
                 color: 'black',
-                text:"white"
+                text:"dark"
             });
             document.body.style.backgroundColor='black'
             setBtnText("Enable Light Mode");
@@ -23,7 +24,7 @@ function Navbar(props) {
             setColor({
                 nav: 'light',
                 color: 'white',
-                text:"black"
+                text:"light"
             });
             setBtnText("Enable Dark Mode");            
             document.body.style.backgroundColor='white'
@@ -31,6 +32,10 @@ function Navbar(props) {
 
         }
     };
+    let location = useLocation();
+  useEffect(() => {
+    console.log(location.pathname)
+  }, [location]);
 
     return (
         <div style={{ backgroundColor: `${color.color }`}}>
@@ -51,10 +56,10 @@ function Navbar(props) {
                     <div className="collapse navbar-collapse d-flex flex-row justify-content-between" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                                <Link className={`nav-link ${location.pathname==='/'? 'active' : ''}`} aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/about">{props.about}</Link>
+                                <Link className={`nav-link ${location.pathname==='/about'? 'active' : ''}`} to="/about">{props.about}</Link>
                             </li>
                         </ul>
                         <div className="justify-content-end">
