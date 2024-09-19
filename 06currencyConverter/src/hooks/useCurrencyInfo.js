@@ -1,9 +1,6 @@
 import {useState,useEffect} from 'react'
 
-let options={
-    method:"GET",
-    
-}
+
 
 function useCurrencyInfo (curr){
     const [data,setData]=useState({})
